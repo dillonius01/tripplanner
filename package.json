@@ -1,0 +1,19 @@
+{
+  "name": "tripplanner",
+  "version": "1.0.0",
+  "description": "plan a vacation",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "fun",
+    "wow",
+    "javascript"
+  ],
+  "author": "1609",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
