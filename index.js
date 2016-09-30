@@ -5,13 +5,16 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var router = require('./routes');
+var db = require('./models');
+
+var Place = require('./models/place');
+var Activity = require('./models/activity');
+var Restaurant = require('./models/restaurant');
+var Hotel = require('./models/hotel');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-// SEQUELIZE IN MODELS FOLDER
-
-
 
 nunjucks.configure('views', {
 	watch: true,
@@ -24,8 +27,6 @@ app.engine('html', nunjucks.render);
 app.use(Express.static('public'));
 
 app.use(router);
-
-
 
 app.use(function(req, res, next) {
 	var err = new Error('Page Not Found');
@@ -43,4 +44,14 @@ app.use(function(err, req, res, next) {
 	);
 });
 
-app.listen(8080);
+Promise.all([
+	Hotel.sync(),
+	Activity.sync(),
+	Restaurant.sync(),
+	Place.sync()
+	])
+  .then(
+  	app.listen(8080, function() {	
+  	}))
+  .catch(console.error);
+

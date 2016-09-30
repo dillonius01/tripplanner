@@ -5,10 +5,7 @@ var Promise = require('bluebird');
 var db = require('./models');
 var Place = require('./models/place');
 var Activity = require('./models/activity');
-// console.log("DB: ", db);
 var Restaurant = require('./models/restaurant');
-
-// var Activity = require('./models/activity');
 var Hotel = require('./models/hotel');
 
 var data = {
