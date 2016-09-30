@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "nodemon"
+    "start:production": "node index.js",
+    "start:dev": "nodemon index.js",
+    "start": "npm run start:dev",
+    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "keywords": [
     "fun",
@@ -23,5 +26,8 @@
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.24.3"
+  },
+  "devDependencies": {
+    "node-sass": "^3.10.1"
   }
 }

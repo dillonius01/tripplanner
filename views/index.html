@@ -3,29 +3,32 @@
 
 
 {% block content %}
+  <div class="dropdown">
+    <label for="select1">Hotels: </label>
+    <select name="hotels" id="select1">
+      {% for hotel in hotels %}
+      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
 
-  <label for="select1">Hotels: </label>
-  <select name="hotels" id="select1">
-    {% for hotel in hotels %}
-    <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-    {% endfor %}
-  </select>
+  <div class="dropdown">
+    <label for="select2">Activities: </label>
+    <select name="activities" id="select2">
+      {% for activity in activities %}
+      <option value="{{ activity.id }}">{{ activity.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
 
-
-  <label for="select2">Activities: </label>
-  <select name="activities" id="select2">
-    {% for activity in activities %}
-    <option value="{{ activity.id }}">{{ activity.name }}</option>
-    {% endfor %}
-  </select>
-
-  <label for="select3">Restaurants: </label>
-  <select name="restaurants" id="select3">
-    {% for restaurant in restaurants %}
-    <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-    {% endfor %}
-  </select>
-
+  <div class="dropdown">
+    <label for="select3">Restaurants: </label>
+    <select name="restaurants" id="select3">
+      {% for restaurant in restaurants %}
+      <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
 
 
 {% endblock %}

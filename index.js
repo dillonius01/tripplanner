@@ -25,8 +25,11 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use(Express.static('public'));
-
+// when accessing bootstrap or jquery files, serves them up from within bower_components
+app.use('/bootstrap', Express.static(__dirname + '/bower_components/bootstrap/dist'));
+app.use('/jquery', Express.static(__dirname + '/bower_components/jquery/dist'));
 app.use(router);
+
 
 app.use(function(req, res, next) {
 	var err = new Error('Page Not Found');
@@ -51,7 +54,6 @@ Promise.all([
 	Place.sync()
 	])
   .then(
-  	app.listen(8080, function() {	
+  	app.listen(8080, function() {
   	}))
   .catch(console.error);
-
