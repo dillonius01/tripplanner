@@ -6,3 +6,26 @@
 
 .dropdown {
   display: block; }
+
+#dayTitle {
+  text-align: center; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  ul button {
+    display: inline; }
+
+.planner {
+  margin-top: 50px; }
+
+.chosen li {
+  list-style-type: none;
+  display: inline; }
+
+.chosen button {
+  float: right; }
+
+.chosenHotels {
+  vertical-align: text-middle; }

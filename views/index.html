@@ -3,32 +3,83 @@
 
 
 {% block content %}
-  <div class="dropdown">
-    <label for="select1">Hotels: </label>
-    <select name="hotels" id="select1">
-      {% for hotel in hotels %}
-      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-      {% endfor %}
-    </select>
+
+<div class="container">
+  <div class="col-lg-8">
+<!-- map goes here -->
   </div>
 
-  <div class="dropdown">
-    <label for="select2">Activities: </label>
-    <select name="activities" id="select2">
-      {% for activity in activities %}
-      <option value="{{ activity.id }}">{{ activity.name }}</option>
-      {% endfor %}
-    </select>
+  <div class="col-lg-4">
+    <div class="container content">
+    </div>
+
+  <div class="options">
+    <div class="dropdown">
+      <label for="select1">Hotels: </label>
+      <select name="hotels" id="select1">
+        {% for hotel in hotels %}
+        <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
   </div>
 
-  <div class="dropdown">
-    <label for="select3">Restaurants: </label>
-    <select name="restaurants" id="select3">
-      {% for restaurant in restaurants %}
-      <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-      {% endfor %}
-    </select>
+    <div class="dropdown">
+      <label for="select2">Activities: </label>
+      <select name="activities" id="select2">
+        {% for activity in activities %}
+        <option value="{{ activity.id }}">{{ activity.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="dropdown">
+      <label for="select3">Restaurants: </label>
+      <select name="restaurants" id="select3">
+        {% for restaurant in restaurants %}
+        <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+  <div class="planner">
+    <h2 id="dayTitle">Day 1</h2>
+
+    <div class="daySelector">
+      <ul>
+      <button type="button" class="btn btn-primary">1</button>
+      <button type="button" class="btn btn-primary">2</button>
+      <button type="button" class="btn btn-primary">3</button>
+      <button type="button" class="btn btn-info">+</button>
+      </ul>
+    </div>
+    <!-- day selector -->
+    <div class="chosen">
+    <h4>My Hotel</h4>
+      <div class="chosenHotels">
+      <li>hotels go here<button type="button" class="btn btn-danger" name="button">X</button></li>
+      </div>
+    </div>
+
+    <div class="chosen">
+    <h4>My Restaurants</h4>
+      <div class="chosenRestaurants">
+      <li>restaurants go here <button type="button" class="btn btn-danger" name="button">X</button></li>
+      </div>
+    </div>
+
+    <div class="chosen">
+    <h4>My Activities</h4>
+      <div class="chosenActivities">
+      <li>activities go here <button type="button" class="btn btn-danger" name="button">X</button></li>
+      </div>
+    </div>
+
+
+
   </div>
+  </div>
+</div>
 
 
 {% endblock %}

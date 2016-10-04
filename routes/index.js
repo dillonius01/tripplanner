@@ -9,14 +9,14 @@ var Promise = require('bluebird');
 
 
 router.get('/', function(req, res, next) {
-
+console.log('Hello INSIDE GET')
 	var gettingHotels = Hotel.findAll();
 	var gettingActivities = Activity.findAll();
 	var gettingRestaurants = Restaurant.findAll();
 
 	Promise.all([gettingHotels, gettingActivities, gettingRestaurants])
 	  .spread(function(hotels, activities, restaurants) {
-	  	console.log(hotels, activities, restaurants);
+
 	  	res.render('index', {
 	  		hotels: hotels,
 	  		activities: activities,

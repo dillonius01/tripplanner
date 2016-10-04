@@ -8,13 +8,44 @@
 
 .content {
 
-
 }
 
 .dropdown {
   display: block;
+}
 
+#dayTitle {
+  text-align: center;
+}
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  button {
+    display: inline;
+  }
+}
+
+.planner {
+  margin-top: 50px;
+}
+
+.chosen {
+  li {
+    list-style-type: none;
+    display: inline;
+    // vertical-align: text-bottom;
+  }
+
+  button {
+    float: right;
+  }
+}
+
+.chosenHotels {
+  vertical-align: text-middle;
 }
 
 // #select1 {

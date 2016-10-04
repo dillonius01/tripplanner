@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <title>{% block title %}Tripplanner{% endblock %}</title>
-    <link href="/public/stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/styles.css" rel="stylesheet">
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
@@ -22,17 +22,8 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="col-lg-8">
 
-      </div>
-
-      <div class="col-lg-4">
-        <div class="container content">
-          {% block content %}{% endblock %}
-        </div>
-      </div>
-    </div>
+    {% block content %}{% endblock %}
 
 
   </body>
