@@ -9,7 +9,7 @@ var Promise = require('bluebird');
 
 
 router.get('/', function(req, res, next) {
-console.log('Hello INSIDE GET')
+
 	var gettingHotels = Hotel.findAll();
 	var gettingActivities = Activity.findAll();
 	var gettingRestaurants = Restaurant.findAll();

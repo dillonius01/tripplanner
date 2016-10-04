@@ -1,3 +1,10 @@
+.module {
+  background: #ff6666;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  border-radius: 15px; }
+
 .col-lg-8 {
   width: 65%; }
 
@@ -10,6 +17,15 @@
 #dayTitle {
   text-align: center; }
 
+.options button {
+  float: right; }
+
+.options .dropdown {
+  padding-top: 20px; }
+
+.options label {
+  display: block; }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -20,11 +36,7 @@ ul {
 .planner {
   margin-top: 50px; }
 
-.chosen li {
-  list-style-type: none;
-  display: inline; }
-
-.chosen button {
+.planner .chosen button {
   float: right; }
 
 .chosenHotels {
