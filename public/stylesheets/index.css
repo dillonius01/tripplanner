@@ -19,8 +19,7 @@ button:focus {
 .item-select-label {
   display: block; }
 
-.map-container {
-  background-color: cornflowerblue;
+#map-container {
   height: 500px; }
 
 .btn-add {
