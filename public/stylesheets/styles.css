@@ -5,6 +5,9 @@
   padding-bottom: 2em;
   border-radius: 15px; }
 
+#map-canvas {
+  height: 650px; }
+
 .col-lg-8 {
   width: 65%; }
 
