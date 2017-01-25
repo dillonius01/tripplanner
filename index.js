@@ -8,6 +8,8 @@ const PORT = 8080;
 
 const db = require('./models');
 
+const routes = require('./router');
+
 
 // logging and parsing
 app.use(morgan('combined'));
@@ -21,12 +23,11 @@ app.engine('html', nunjucks.render);
 
 
 app.use(('/public', express.static(path.join(__dirname, 'public'))));
+app.use(('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist'))));
+app.use(('/jQuery', express.static(path.join(__dirname, 'node_modules/jQuery/tmp'))));
 
 
-
-app.get('/', (req, res, next) => {
-	res.render('index');
-});
+app.use('/', routes);
 
 
 app.use((req, res, next) => {
