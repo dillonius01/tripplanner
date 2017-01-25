@@ -25,7 +25,7 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use(Express.static('public'));
-// when accessing bootstrap or jquery files, serves them up from within bower_components
+// when acces'burecsing bootstrap or jquery files, serves them up from within bower_components
 app.use('/bootstrap', Express.static(__dirname + '/bower_components/bootstrap/dist'));
 app.use('/jquery', Express.static(__dirname + '/bower_components/jquery/dist'));
 app.use(router);
