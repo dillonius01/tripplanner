@@ -2,33 +2,58 @@
 
 {% block content %}
 
-	<h2>Hello world!</h2>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-8" id="left-panel-container">
+				<div class="map-container">
+				<h2 id="sup">I'm a map, mofos</h2>
+				</div>
+			</div>
 
-	<div>
-		<label for="hotel">Hotels</label>
-		<select name="hotel">
-			{% for hotel in hotels %}
-			<option value="{{hotel.id}}">{{hotel.name}}</option>
-			{% endfor %}
-		</select>
-	</div>
+			<div class="col-sm-4" id="right-panel-container">
+				<div class="choices-container">
+					<div>
+						<label class="item-select-label" for="hotel">Hotels</label>
+						<select class="item-select" name="hotel">
+							{% for hotel in hotels %}
+							<option value="{{hotel.id}}">{{hotel.name}}</option>
+							{% endfor %}
+						</select>
+						<button class="btn-add">+</button>
+					</div>
 
-	<div>
-		<label for="activity">Activities</label>
-		<select name="activity">
-			{% for activity in activities %}
-			<option value="{{activity.id}}">{{activity.name}}</option>
-			{% endfor %}
-		</select>
-	</div>
+					<div>
+						<label class="item-select-label" for="activity">Activities</label>
+						<select class="item-select" name="activity">
+							{% for activity in activities %}
+							<option value="{{activity.id}}">{{activity.name}}</option>
+							{% endfor %}
+						</select>
+						<button class="btn-add">+</button>
+					</div>
 
-	<div>
-		<label for="restaurant">Restaurants</label>
-		<select name="restaurant">
-			{% for restaurant in restaurants %}
-			<option value="{{restaurant.id}}">{{restaurant.name}}</option>
-			{% endfor %}
-		</select>
+					<div>
+						<label class="item-select-label" for="restaurant">Restaurants</label>
+						<select class="item-select" name="restaurant">
+							{% for restaurant in restaurants %}
+							<option value="{{restaurant.id}}">{{restaurant.name}}</option>
+							{% endfor %}
+						</select>
+						<button class="btn-add">+</button>
+					</div>
+				</div>
+
+
+				<div>
+					<div id="day-name-container">
+						<h3>Day 2</h3>
+						<button class="btn-x">x</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
 	</div>
 
 {% endblock %}

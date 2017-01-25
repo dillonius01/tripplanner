@@ -1,3 +1,77 @@
 body {
 	font-family: Arial;
 }
+
+button:focus {
+	outline: 0;
+}
+
+#sup {
+	margin: 0;
+}
+
+.item-select {
+	width: 22em;
+}
+
+.choices-container {
+	background-color: bisque;
+	padding: 1em;
+	border-radius: 1em;
+	margin-top: 2em;
+}
+
+.item-select-label {
+	display: block;
+}
+
+
+.map-container {
+	background-color: cornflowerblue;
+	height: 300px;
+}
+
+.btn-add {
+	height: 30px;
+	width: 30px;
+	border-radius: 30px;
+	border: none;
+	background-color: coral;
+	color: white;
+}
+
+.btn-x {
+	height: 30px;
+	width: 30px;
+	border-radius: 30px;
+	border: none;
+	background-color: red;
+	color: white;
+}
+
+#my-nav {
+	margin-bottom: 0;
+}
+
+#day-name-container {
+
+	h3 {
+		margin: 0;
+		padding-right: 10px;
+	};
+
+
+	margin-top: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#right-panel-container {
+	background-color: lightgray;
+}
+
+#left-panel-container {
+	padding-right: 0;
+}
