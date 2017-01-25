@@ -51,13 +51,10 @@ app.use(function(err, req, res, next) {
 	);
 });
 
-Promise.all([
-	Hotel.sync(),
-	Activity.sync(),
-	Restaurant.sync(),
-	Place.sync()
-	])
-  .then(
-  	app.listen(8080, function() {
-  	}))
+db.sync()
+  .then(() => {
+  	app.listen(8080, () => {
+  		console.log('Listening on port 8080!')
+  	}) 
+  })
   .catch(console.error);
