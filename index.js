@@ -1,60 +1,52 @@
-var Express = require('express');
-var app = new Express();
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const path = require('path');
+const nunjucks = require('nunjucks');
+const PORT = 8080;
 
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var nunjucks = require('nunjucks');
-var router = require('./routes');
-var db = require('./models');
+const db = require('./models');
 
-var Place = require('./models/place');
-var Activity = require('./models/activity');
-var Restaurant = require('./models/restaurant');
-var Hotel = require('./models/hotel');
 
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: false}));
+// logging and parsing
+app.use(morgan('combined'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-nunjucks.configure('views', {
-	watch: true,
-	express: app,
-	noCache: true
-})
+// nunjucks rendering engine
+const env = nunjucks.configure('views', {noCache: true});
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
-app.use(Express.static('public'));
-// when acces'burecsing bootstrap or jquery files, serves them up from within bower_components
 
-app.use(Express.static('bower_components'));
-// when accessing bootstrap or jquery files, serves them up from within bower_components
-
-app.use('/bootstrap', Express.static(__dirname + '/bower_components/bootstrap/dist'));
-app.use('/jquery', Express.static(__dirname + '/bower_components/jquery/dist'));
-app.use(router);
+app.use(('/public', express.static(path.join(__dirname, 'public'))));
 
 
-app.use(function(req, res, next) {
-	var err = new Error('Page Not Found');
+
+app.get('/', (req, res, next) => {
+	res.render('index');
+});
+
+
+app.use((req, res, next) => {
+	const err = new Error('Page not found!');
 	err.status = 404;
 	next(err);
 });
 
-app.use(function(err, req, res, next) {
-	res.status(err.status || 500);
+app.use((err, req, res, next) => {
 	console.error(err);
-	res.render(
-		'/error', {
-			message: err.message
-		}
-	);
+	res.status(err.status || 500);
+	res.render('error', {error: err});
 });
 
+
 db.sync()
-  .then(() => {
-  	app.listen(8080, () => {
-  		console.log('Listening on port 8080!')
-  	}) 
-  })
-  .catch(console.error);
+.then(() => {
+	console.log('Synced models!')
+	app.listen(PORT, () => {
+		console.log(`Rocking out on port ${PORT}`);
+	});
+})
+.catch(console.error);

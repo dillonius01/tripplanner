@@ -1,33 +1,37 @@
 {
   "name": "tripplanner",
   "version": "1.0.0",
-  "description": "plan a vacation",
+  "description": "fellowship version of tripplanner",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start:production": "node index.js",
-    "start:dev": "nodemon index.js",
-    "start": "npm run start:dev",
-    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dillonius01/tripplanner.git"
   },
   "keywords": [
-    "fun",
-    "wow",
-    "javascript"
+    "trips",
+    "jquery"
   ],
-  "author": "1609",
-  "license": "MIT",
+  "author": "dillonius01 + fsa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dillonius01/tripplanner/issues"
+  },
+  "homepage": "https://github.com/dillonius01/tripplanner#readme",
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
-    "nunjucks": "^2.5.2",
-    "pg": "^6.1.0",
+    "nunjucks": "^3.0.0",
+    "path": "^0.12.7",
+    "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.24.3"
+    "sequelize": "^3.30.0"
   },
   "devDependencies": {
-    "node-sass": "^3.10.1"
+    "nodemon": "^1.11.0"
   }
 }

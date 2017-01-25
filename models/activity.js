@@ -1,18 +1,20 @@
-var Sequelize = require('sequelize');
-var db = require('./index');
-var Place = require('../models/place');
-
-var Activity = db.define('activity', {
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  age_range: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+const Sequelize = require('sequelize');
+const db = new Sequelize('postgres://localhost:5432/tripplanner', {
+	logging: false
 });
 
-Activity.belongsTo(Place);
+const Activity = db.define('activity', {
+
+	name: {
+		type: Sequelize.STRING,
+		allowNull: false
+	},
+
+	age_range: {
+		type: Sequelize.STRING,
+		allowNull: false
+	}
+
+});
 
 module.exports = Activity;
