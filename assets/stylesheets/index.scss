@@ -1,3 +1,5 @@
+$content-height: calc(100vh - 50px);
+
 body {
 	font-family: Arial;
 }
@@ -26,8 +28,8 @@ button:focus {
 }
 
 
-#map-container {
-	height: 500px;
+#map-canvas {
+	height: $content-height;
 }
 
 .btn-add {
@@ -121,7 +123,7 @@ button:focus {
 
 #right-panel-container {
 	background-color: lightgray;
-	height: calc(100vh - 50px);
+	height: $content-height;
 }
 
 #left-panel-container {
